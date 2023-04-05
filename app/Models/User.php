@@ -9,8 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract
+class User extends Model
+    implements AuthenticatableContract, AuthorizableContract
 {
+
     use Authenticatable, Authorizable, HasFactory;
 
     /**
@@ -19,8 +21,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var string[]
      */
     protected $fillable = [
-        'name', 'email',
-    ];
+            'first_name', 'last_name', 'email', 'phone', 'password',
+        ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -28,6 +30,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var string[]
      */
     protected $hidden = [
-        'password',
-    ];
+            'password',
+        ];
+
 }
