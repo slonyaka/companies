@@ -9,11 +9,15 @@ The API to share the company's information for the logged users.
 Copy .env.example to .env file.
 
 XDebug added for local development.
-XDEBUG_HOST need to be specified for particular OS in an .env file.
-For example `host.docker.internal` for Windows.
-Port for XDebug used 9009 by default but could be changed in .env file.
+Configs in .env file:
+XDEBUG_START_WITH_REQUEST should be set "yes" to enable.
 
-Need to add a line to the hosts file
+XDEBUG_HOST need to be specified for particular OS.
+For example `host.docker.internal` for Windows.
+
+Port for XDebug used 9009 by default but could be changed.
+
+To run http://api.loc domain need to be added to the hosts file
 `127.0.0.1 api.loc`
 
 Run `./bin/init` file to up docker containers and run migrations.
