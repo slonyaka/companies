@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('phone');
-            $table->string('api_token');
+            $table->string('api_token')->nullable();
+            $table->string('password_restore_token')->nullable();
             $table->timestamps();
         });
     }
